@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slide 12 Premium</title>
+ <link rel="stylesheet" href="/public/styles.css" />
+</head>
+<body>
+  <div class="canvas">
+    <div class="card-main">
+      <div class="topbar">
+        <div class="title-wrap">
+          <div class="title-accent"></div>
+          <h1><%= titulo %></h1>
+        </div>
+        <div class="logo-wrap">
+          <div class="logo-circle"></div>
+          <div class="logo-text"><%= logoText %></div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="kpi-row">
+        <div class="kpi kpi-blue">
+          <div class="kpi-icon">👥</div>
+          <div class="kpi-text">
+            <div class="kpi-label">TOTAL ATENCIONES</div>
+            <div class="kpi-value"><%= totalAtenciones %></div>
+            <div class="kpi-sub">100% del total</div>
+          </div>
+        </div>
+
+        <div class="kpi kpi-teal">
+          <div class="kpi-icon">🛡</div>
+          <div class="kpi-text">
+            <div class="kpi-label">INCIDENTES</div>
+            <div class="kpi-value"><%= incidentes %></div>
+            <div class="kpi-sub"><%= pctIncidentes %> del total</div>
+          </div>
+        </div>
+
+        <div class="kpi kpi-orange">
+          <div class="kpi-icon">📄</div>
+          <div class="kpi-text">
+            <div class="kpi-label">REQUERIMIENTOS</div>
+            <div class="kpi-value"><%= requerimientos %></div>
+            <div class="kpi-sub"><%= pctRequerimientos %> del total</div>
+          </div>
+        </div>
+
+        <div class="kpi kpi-purple">
+          <div class="kpi-icon">◔</div>
+          <div class="kpi-text">
+            <div class="kpi-label">% PARTICIPACIÓN DE INCIDENTES</div>
+            <div class="kpi-value"><%= pctIncidentes %></div>
+            <div class="kpi-sub">del total</div>
+          </div>
+        </div>
+
+        <div class="kpi kpi-cyan">
+          <div class="kpi-icon">◕</div>
+          <div class="kpi-text">
+            <div class="kpi-label">% PARTICIPACIÓN DE REQUERIMIENTOS</div>
+            <div class="kpi-value"><%= pctRequerimientos %></div>
+            <div class="kpi-sub">del total</div>
+          </div>
+        </div>
+
+        <div class="kpi kpi-blue">
+          <div class="kpi-icon">⚖</div>
+          <div class="kpi-text">
+            <div class="kpi-label">BRECHA</div>
+            <div class="kpi-value"><%= brecha %></div>
+            <div class="kpi-sub">Req. - Inc.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-row">
+        <div class="panel">
+          <div class="panel-header">
+            <span>INCIDENTE VS REQUERIMIENTO MENSUAL</span>
+          </div>
+          <div class="panel-body panel-donut">
+            <div class="donut-box">
+              <%
+                const total = donutIncidentes + donutRequerimientos;
+                const pctI = total ? (donutIncidentes / total) * 100 : 0;
+                const pctR = total ? (donutRequerimientos / total) * 100 : 0;
+              %>
+              <div
+                class="donut"
+                style="background: conic-gradient(#1f6fe5 0 <%= pctI %>%, #ff6a00 <%= pctI %>% 100%);"
+              >
+                <div class="donut-center"></div>
+              </div>
+            </div>
+
+            <div class="legend-box">
+              <div class="legend-item">
+                <span class="dot blue"></span>
+                <div>
+                  <div class="legend-title">Incidentes</div>
+                  <div class="legend-sub"><%= incidentes %> (<%= pctIncidentes %>)</div>
+                </div>
+              </div>
+              <div class="legend-item">
+                <span class="dot orange"></span>
+                <div>
+                  <div class="legend-title">Requerimientos</div>
+                  <div class="legend-sub"><%= requerimientos %> (<%= pctRequerimientos %>)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <span>RESUMEN DE ATENCIONES POR TIPO</span>
+          </div>
+          <div class="panel-body">
+            <table class="summary-table">
+              <thead>
+                <tr>
+                  <th>UP</th>
+                  <th>INCIDENTES</th>
+                  <th>REQUERIMIENTOS</th>
+                  <th>TOTAL</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= tabla.up %></td>
+                  <td><%= tabla.incidentes %></td>
+                  <td><%= tabla.requerimientos %></td>
+                  <td><%= tabla.total %></td>
+                </tr>
+                <tr class="pct-row">
+                  <td>%</td>
+                  <td><%= tabla.pctIncidentes %></td>
+                  <td><%= tabla.pctRequerimientos %></td>
+                  <td><%= tabla.pctTotal %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="insight-row">
+        <div class="insight-icon">🎯</div>
+        <div class="insight-title">DISTRIBUCIÓN DE ATENCIONES POR TIPO</div>
+        <div class="insight-divider"></div>
+        <div class="insight-text"><%= insight %></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

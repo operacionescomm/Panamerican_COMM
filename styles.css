@@ -1,0 +1,637 @@
+{
+  "metadata": {
+    "operacion": "Panamerican - Huarón",
+    "periodo": "Junio 2026",
+    "corteOperativo": "24/05/2026 al 23/06/2026",
+    "fuente": "Google Sheets PANAMERICAN-HUARON",
+    "nota": "Se muestran únicamente fechas con atenciones u horas registradas."
+  },
+  "slide10": {
+    "titulo": "ATENCIONES EN LA OPERACIÓN PANAMERICAN HUARÓN - JUNIO 2026",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "diasPeriodo": 31,
+    "totalAtenciones": 132,
+    "totalHoras": 158.2,
+    "promedioAtencionesDia": "4.7",
+    "promedioHorasDia": "5.7",
+    "horasPorAtencion": "1.20",
+    "diasConAtencion": 28,
+    "dias": [
+      {
+        "fecha": "27/05/2026",
+        "dia": "27",
+        "atenciones": 9,
+        "horas": 10.0
+      },
+      {
+        "fecha": "28/05/2026",
+        "dia": "28",
+        "atenciones": 4,
+        "horas": 4.0
+      },
+      {
+        "fecha": "29/05/2026",
+        "dia": "29",
+        "atenciones": 2,
+        "horas": 3.0
+      },
+      {
+        "fecha": "30/05/2026",
+        "dia": "30",
+        "atenciones": 3,
+        "horas": 4.5
+      },
+      {
+        "fecha": "31/05/2026",
+        "dia": "31",
+        "atenciones": 5,
+        "horas": 9.0
+      },
+      {
+        "fecha": "01/06/2026",
+        "dia": "01",
+        "atenciones": 7,
+        "horas": 5.6
+      },
+      {
+        "fecha": "02/06/2026",
+        "dia": "02",
+        "atenciones": 7,
+        "horas": 5.3
+      },
+      {
+        "fecha": "03/06/2026",
+        "dia": "03",
+        "atenciones": 8,
+        "horas": 6.0
+      },
+      {
+        "fecha": "04/06/2026",
+        "dia": "04",
+        "atenciones": 3,
+        "horas": 2.0
+      },
+      {
+        "fecha": "05/06/2026",
+        "dia": "05",
+        "atenciones": 4,
+        "horas": 6.0
+      },
+      {
+        "fecha": "06/06/2026",
+        "dia": "06",
+        "atenciones": 6,
+        "horas": 6.3
+      },
+      {
+        "fecha": "07/06/2026",
+        "dia": "07",
+        "atenciones": 4,
+        "horas": 4.6
+      },
+      {
+        "fecha": "08/06/2026",
+        "dia": "08",
+        "atenciones": 4,
+        "horas": 4.0
+      },
+      {
+        "fecha": "09/06/2026",
+        "dia": "09",
+        "atenciones": 5,
+        "horas": 6.0
+      },
+      {
+        "fecha": "10/06/2026",
+        "dia": "10",
+        "atenciones": 3,
+        "horas": 5.0
+      },
+      {
+        "fecha": "11/06/2026",
+        "dia": "11",
+        "atenciones": 3,
+        "horas": 5.0
+      },
+      {
+        "fecha": "12/06/2026",
+        "dia": "12",
+        "atenciones": 2,
+        "horas": 8.0
+      },
+      {
+        "fecha": "13/06/2026",
+        "dia": "13",
+        "atenciones": 2,
+        "horas": 2.0
+      },
+      {
+        "fecha": "14/06/2026",
+        "dia": "14",
+        "atenciones": 3,
+        "horas": 4.0
+      },
+      {
+        "fecha": "15/06/2026",
+        "dia": "15",
+        "atenciones": 4,
+        "horas": 6.0
+      },
+      {
+        "fecha": "16/06/2026",
+        "dia": "16",
+        "atenciones": 4,
+        "horas": 6.0
+      },
+      {
+        "fecha": "17/06/2026",
+        "dia": "17",
+        "atenciones": 6,
+        "horas": 7.0
+      },
+      {
+        "fecha": "18/06/2026",
+        "dia": "18",
+        "atenciones": 7,
+        "horas": 8.0
+      },
+      {
+        "fecha": "19/06/2026",
+        "dia": "19",
+        "atenciones": 5,
+        "horas": 5.3
+      },
+      {
+        "fecha": "20/06/2026",
+        "dia": "20",
+        "atenciones": 4,
+        "horas": 5.3
+      },
+      {
+        "fecha": "21/06/2026",
+        "dia": "21",
+        "atenciones": 7,
+        "horas": 8.0
+      },
+      {
+        "fecha": "22/06/2026",
+        "dia": "22",
+        "atenciones": 7,
+        "horas": 7.0
+      },
+      {
+        "fecha": "23/06/2026",
+        "dia": "23",
+        "atenciones": 4,
+        "horas": 5.3
+      }
+    ],
+    "insight": "La operación registró 132 atenciones en 28 días con actividad; el mayor volumen diario se concentró al inicio y al cierre del periodo operativo."
+  },
+  "slide11": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Atenciones por ubicación y evolución mensual",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "meses": [
+      {
+        "mes": "Mar-26",
+        "mina": 81,
+        "superficie": 7,
+        "total": 88
+      },
+      {
+        "mes": "Abr-26",
+        "mina": 66,
+        "superficie": 18,
+        "total": 84
+      },
+      {
+        "mes": "May-26",
+        "mina": 58,
+        "superficie": 21,
+        "total": 79
+      },
+      {
+        "mes": "Jun-26",
+        "mina": 77,
+        "superficie": 21,
+        "total": 98
+      }
+    ],
+    "totalAtenciones": 349,
+    "totalMinaGlobal": 282,
+    "totalSuperficieGlobal": 67,
+    "totalMesActualValue": 98,
+    "participacionMina": "80.8%",
+    "participacionSuperficie": "19.2%",
+    "insight": "En las atenciones clasificadas por ubicación, el 80.8% corresponde a interior mina y el 19.2% a superficie durante los últimos cuatro periodos."
+  },
+  "slide12": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Incidentes vs requerimientos",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalAtenciones": 115,
+    "incidentes": 42,
+    "requerimientos": 73,
+    "brecha": 31,
+    "pctIncidentes": "36.52%",
+    "pctRequerimientos": "63.48%",
+    "tabla": {
+      "up": "TOTAL",
+      "incidentes": 42,
+      "requerimientos": 73,
+      "total": 115,
+      "pctIncidentes": "36.52%",
+      "pctRequerimientos": "63.48%",
+      "pctTotal": "100%"
+    },
+    "insight": "Los requerimientos representan el 63.48% de las atenciones clasificadas por tipo, con una brecha de 31 atenciones frente a los incidentes."
+  },
+  "slide13": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Evolución de requerimientos e incidentes",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalRequerimientos": 1034,
+    "totalIncidentes": 652,
+    "totalAtenciones": 1686,
+    "participacionRequerimientos": "61%",
+    "participacionIncidentes": "39%",
+    "promedioMensualTotal": "153.3",
+    "meses": [
+      {
+        "mes": "Ago-25",
+        "incidentes": 42,
+        "requerimientos": 177
+      },
+      {
+        "mes": "Sep-25",
+        "incidentes": 102,
+        "requerimientos": 72
+      },
+      {
+        "mes": "Oct-25",
+        "incidentes": 115,
+        "requerimientos": 80
+      },
+      {
+        "mes": "Nov-25",
+        "incidentes": 83,
+        "requerimientos": 81
+      },
+      {
+        "mes": "Dic-25",
+        "incidentes": 85,
+        "requerimientos": 64
+      },
+      {
+        "mes": "Ene-26",
+        "incidentes": 48,
+        "requerimientos": 85
+      },
+      {
+        "mes": "Feb-26",
+        "incidentes": 47,
+        "requerimientos": 122
+      },
+      {
+        "mes": "Mar-26",
+        "incidentes": 31,
+        "requerimientos": 92
+      },
+      {
+        "mes": "Abr-26",
+        "incidentes": 31,
+        "requerimientos": 104
+      },
+      {
+        "mes": "May-26",
+        "incidentes": 26,
+        "requerimientos": 84
+      },
+      {
+        "mes": "Jun-26",
+        "incidentes": 42,
+        "requerimientos": 73
+      }
+    ],
+    "insight": "En los once periodos analizados, los requerimientos concentran el 61% de las atenciones clasificadas, mientras los incidentes representan el 39%."
+  },
+  "slide14": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Top 10 requerimientos",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalRequerimientos": 73,
+    "totalTiempoHoras": 104.4,
+    "items": [
+      {
+        "nombre": "Instalación nueva",
+        "cantidad": 47,
+        "tiempoHoras": 86.1
+      },
+      {
+        "nombre": "Avería",
+        "cantidad": 2,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Desgaste",
+        "cantidad": 2,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Centralización de decodificador",
+        "cantidad": 1,
+        "tiempoHoras": 1.0
+      },
+      {
+        "nombre": "Desorden",
+        "cantidad": 1,
+        "tiempoHoras": 1.0
+      },
+      {
+        "nombre": "Implementación en mina",
+        "cantidad": 1,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Prueba de funcionamiento de cable",
+        "cantidad": 1,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Reubicación de radio",
+        "cantidad": 1,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Reubicación de cámara",
+        "cantidad": 1,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Retiro de material",
+        "cantidad": 1,
+        "tiempoHoras": 0.3
+      }
+    ],
+    "insight": "La instalación nueva concentra 47 requerimientos y 86.1 horas, siendo la principal actividad planificada del periodo."
+  },
+  "slide15": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Top 10 incidentes",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalIncidentes": 42,
+    "totalTiempoHoras": 52.8,
+    "items": [
+      {
+        "nombre": "Cable seccionado",
+        "cantidad": 10,
+        "tiempoHoras": 17.0
+      },
+      {
+        "nombre": "Cable suelto",
+        "cantidad": 3,
+        "tiempoHoras": 1.6
+      },
+      {
+        "nombre": "Labor fuera de operación",
+        "cantidad": 2,
+        "tiempoHoras": 3.0
+      },
+      {
+        "nombre": "Ampliación de la mina",
+        "cantidad": 1,
+        "tiempoHoras": 1.0
+      },
+      {
+        "nombre": "Avería",
+        "cantidad": 1,
+        "tiempoHoras": 0.3
+      },
+      {
+        "nombre": "Averías",
+        "cantidad": 1,
+        "tiempoHoras": 3.0
+      },
+      {
+        "nombre": "Cable suelto por desate",
+        "cantidad": 1,
+        "tiempoHoras": 2.0
+      },
+      {
+        "nombre": "Cable de energía seccionado",
+        "cantidad": 1,
+        "tiempoHoras": 1.0
+      },
+      {
+        "nombre": "Cámara inoperativa",
+        "cantidad": 1,
+        "tiempoHoras": 1.0
+      },
+      {
+        "nombre": "Falla de AP",
+        "cantidad": 1,
+        "tiempoHoras": 1.0
+      }
+    ],
+    "insight": "El cable seccionado concentra 10 incidentes y 17 horas, por lo que constituye la principal causa de atención correctiva del periodo."
+  },
+  "slide17": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Top suministros general",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalSuministros": 2842,
+    "items": [
+      {
+        "nombre": "Cable Leaky Feeder",
+        "unidad": "MT",
+        "requerimientos": 1040,
+        "incidentes": 250,
+        "cantidad": 1290
+      },
+      {
+        "nombre": "Cintillo",
+        "unidad": "UN",
+        "requerimientos": 375,
+        "incidentes": 44,
+        "cantidad": 499
+      },
+      {
+        "nombre": "Cable STP",
+        "unidad": "MT",
+        "requerimientos": 360,
+        "incidentes": 15,
+        "cantidad": 375
+      },
+      {
+        "nombre": "Cintillos",
+        "unidad": "UN",
+        "requerimientos": 60,
+        "incidentes": 12,
+        "cantidad": 122
+      },
+      {
+        "nombre": "Cable Leady Feeder",
+        "unidad": "MT",
+        "requerimientos": 100,
+        "incidentes": 0,
+        "cantidad": 100
+      },
+      {
+        "nombre": "Cable eléctrico",
+        "unidad": "MT",
+        "requerimientos": 80,
+        "incidentes": 10,
+        "cantidad": 90
+      },
+      {
+        "nombre": "Perno Hiltin 1/4",
+        "unidad": "UN",
+        "requerimientos": 38,
+        "incidentes": 0,
+        "cantidad": 58
+      },
+      {
+        "nombre": "Pernos de 3/8",
+        "unidad": "UN",
+        "requerimientos": 54,
+        "incidentes": 0,
+        "cantidad": 55
+      },
+      {
+        "nombre": "Cable 50",
+        "unidad": "MT",
+        "requerimientos": 0,
+        "incidentes": 50,
+        "cantidad": 50
+      },
+      {
+        "nombre": "Hoja Bon",
+        "unidad": "UN",
+        "requerimientos": 0,
+        "incidentes": 0,
+        "cantidad": 30
+      }
+    ],
+    "insight": "El Cable Leaky Feeder lidera el consumo general con 1,290 metros, equivalente al 45.39% del total registrado."
+  },
+  "slide18": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Suministros en requerimientos",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalSuministrosRequerimientos": 2196,
+    "items": [
+      {
+        "nombre": "Cable Leaky Feeder",
+        "unidad": "MT",
+        "cantidad": 1040
+      },
+      {
+        "nombre": "Cintillo",
+        "unidad": "UN",
+        "cantidad": 375
+      },
+      {
+        "nombre": "Cable STP",
+        "unidad": "MT",
+        "cantidad": 360
+      },
+      {
+        "nombre": "Cable Leady Feeder",
+        "unidad": "MT",
+        "cantidad": 100
+      },
+      {
+        "nombre": "Cable eléctrico",
+        "unidad": "MT",
+        "cantidad": 80
+      },
+      {
+        "nombre": "Cintillos",
+        "unidad": "UN",
+        "cantidad": 60
+      },
+      {
+        "nombre": "Pernos de 3/8",
+        "unidad": "UN",
+        "cantidad": 54
+      },
+      {
+        "nombre": "Perno Hiltin 1/4",
+        "unidad": "UN",
+        "cantidad": 38
+      },
+      {
+        "nombre": "Perno de 3/8",
+        "unidad": "UN",
+        "cantidad": 20
+      },
+      {
+        "nombre": "Cable coaxial",
+        "unidad": "MT",
+        "cantidad": 10
+      }
+    ],
+    "insight": "El Cable Leaky Feeder concentra 1,040 metros en requerimientos, seguido por Cintillo y Cable STP."
+  },
+  "slide19": {
+    "titulo": "Panamerican Huarón - Junio 2026 - Suministros en incidentes",
+    "periodo": "Junio 2026",
+    "logoText": "COMM",
+    "totalSuministrosIncidentes": 426,
+    "items": [
+      {
+        "nombre": "Cable Leaky Feeder",
+        "unidad": "MT",
+        "cantidad": 250
+      },
+      {
+        "nombre": "Cable 50",
+        "unidad": "MT",
+        "cantidad": 50
+      },
+      {
+        "nombre": "Cintillo",
+        "unidad": "UN",
+        "cantidad": 44
+      },
+      {
+        "nombre": "Cable STP",
+        "unidad": "MT",
+        "cantidad": 15
+      },
+      {
+        "nombre": "Cintillo más cinta",
+        "unidad": "UN",
+        "cantidad": 15
+      },
+      {
+        "nombre": "Cintillos",
+        "unidad": "UN",
+        "cantidad": 12
+      },
+      {
+        "nombre": "Cable eléctrico",
+        "unidad": "MT",
+        "cantidad": 10
+      },
+      {
+        "nombre": "Cinta vulcanizante y aislante",
+        "unidad": "MT",
+        "cantidad": 9
+      },
+      {
+        "nombre": "Cintas aislante y vulcanizante",
+        "unidad": "MT",
+        "cantidad": 5
+      },
+      {
+        "nombre": "Cinta vulcanizante y cinta aislante",
+        "unidad": "MT",
+        "cantidad": 2
+      }
+    ],
+    "insight": "El Cable Leaky Feeder concentra 250 metros asociados a incidentes, representando 58.69% del consumo correctivo."
+  }
+}
