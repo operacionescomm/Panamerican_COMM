@@ -1,0 +1,208 @@
+
+/* ==========================================================
+   COMM / HUARÓN - ESTANDARIZACIÓN VISUAL GLOBAL
+   Aplica una misma cabecera, logo, tipografía y seguridad de
+   layout a todas las láminas del motor visual.
+   ========================================================== */
+
+:root {
+  --comm-navy: #071f5c;
+  --comm-blue: #0d55d8;
+  --comm-blue-dark: #082d91;
+  --comm-teal: #13b7ba;
+  --comm-orange: #ff6200;
+  --comm-purple: #7a35d7;
+  --comm-border: #cddbef;
+  --comm-soft: #f4f8ff;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+.slide,
+.s10-slide,
+.canvas {
+  width: 1600px !important;
+  height: 900px !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%) !important;
+  color: var(--comm-navy) !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Cabecera/logo estándar: igualar todos los slides al patrón del slide 13 */
+.top-curve,
+.logo-curve,
+.s10-top-curve {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 360px !important;
+  height: 86px !important;
+  background: linear-gradient(135deg, #0d65df 0%, #082d91 100%) !important;
+  border-bottom-left-radius: 105px !important;
+  z-index: 1 !important;
+}
+
+.logo,
+.logo-text,
+.s10-logo,
+.comm-logo {
+  position: fixed !important;
+  top: 27px !important;
+  right: 40px !important;
+  z-index: 5 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 12px !important;
+  color: #ffffff !important;
+  font-size: 39px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.6px !important;
+  padding: 0 !important;
+  text-transform: uppercase !important;
+}
+
+.logo-symbol,
+.logo-text::before,
+.comm-logo-symbol {
+  content: "";
+  display: inline-block !important;
+  width: 50px !important;
+  height: 30px !important;
+  border-radius: 50% !important;
+  border: 5px dashed rgba(255,255,255,0.88) !important;
+  transform: rotate(-18deg) !important;
+  flex: 0 0 auto !important;
+}
+
+.header,
+.s10-header,
+.topbar {
+  position: relative !important;
+  z-index: 4 !important;
+  min-height: 86px !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  margin-bottom: 8px !important;
+  padding-right: 390px !important;
+}
+
+.title-wrap,
+.s10-title-wrap {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+
+.title-bar,
+.s10-title-bar,
+.title-accent {
+  width: 13px !important;
+  height: 58px !important;
+  border-radius: 7px !important;
+  background: linear-gradient(180deg, #0d65df, #13b7ba) !important;
+  flex: 0 0 13px !important;
+  margin-top: 4px !important;
+}
+
+.title,
+.s10-title,
+h1 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  color: var(--comm-navy) !important;
+  font-size: 39px !important;
+  line-height: 1.04 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.8px !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  max-width: 1110px !important;
+}
+
+/* Evitar que los títulos largos invadan el logo */
+.slide .title-wrap .title,
+.s10-slide .s10-title-wrap .s10-title {
+  max-width: 1080px !important;
+}
+
+/* Ajuste general de tarjetas KPI: iconos centrados y texto consistente */
+.kpi-card,
+.s10-kpi-card,
+.kpi {
+  overflow: hidden !important;
+}
+
+.kpi-icon,
+.s10-kpi-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  flex: 0 0 auto !important;
+}
+
+.kpi-label,
+.s10-kpi-label {
+  text-transform: uppercase !important;
+  color: #092869 !important;
+  font-weight: 900 !important;
+}
+
+.kpi-value,
+.s10-kpi-value {
+  font-weight: 900 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.panel-title,
+.s10-panel-title {
+  text-transform: uppercase !important;
+  letter-spacing: 0.2px !important;
+}
+
+/* Corregir contraste del logo en láminas 14-19 */
+.logo-text {
+  color: #ffffff !important;
+}
+
+/* Evitar superposición de iconos circulares en encabezados de panel */
+.panel-icon {
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+}
+
+/* Normalización de pie corporativo */
+.bottom-band,
+.s10-bottom-band {
+  height: 25px !important;
+  background: linear-gradient(90deg, #082d91 0%, #0d65df 55%, #13b7ba 100%) !important;
+  z-index: 1 !important;
+}
+
+/* Tipografía de tablas y gráficos */
+table,
+th,
+td,
+svg text {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* Slide 12 legacy: ocultar elementos antiguos si todavía existieran */
+.card-main .logo-wrap,
+.card-main .divider {
+  display: none !important;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "visual-engine",
+  "version": "1.0.0",
+  "description": "Motor visual premium para reportes COMM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node install-browser.js && node server.js",
+    "install:browser": "node install-browser.js",
+    "postinstall": "node install-browser.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "puppeteer": "23.11.1"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}
