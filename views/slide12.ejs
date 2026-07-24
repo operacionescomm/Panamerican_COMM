@@ -3,76 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <title>Slide 12 - Incidentes vs Requerimientos</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
-    body { background: #eef4fb; }
 
-    .slide {
-      width: 1600px;
-      height: 900px;
-      background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
-      color: #08245c;
-      overflow: hidden;
-      position: relative;
-      padding: 22px 26px 0 26px;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    .bottom-band {
+    body {
+      background: #eef4fb;
+    }
+
+    .s12-slide {
+      width: 1600px;
+      height: 900px;
+      position: relative;
+      overflow: hidden;
+      padding: 22px 26px 0 26px;
+      color: #08245c;
+      background: linear-gradient(180deg, #ffffff 0%, #f4f8ff 100%);
+    }
+
+    .s12-bottom-band {
       position: absolute;
       left: 0;
       bottom: 0;
       width: 100%;
       height: 25px;
-      background: linear-gradient(90deg, #082d91 0%, #0d65df 55%, #13b7ba 100%);
       z-index: 1;
+      background: linear-gradient(90deg, #082d91 0%, #0d65df 55%, #13b7ba 100%);
     }
 
-    .header {
-      position: relative;
-      z-index: 3;
-      height: 86px;
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 8px;
-      padding-right: 390px;
-    }
-
-    .title-wrap { display: flex; align-items: flex-start; gap: 18px; min-width: 0; }
-
-    .title-bar {
-      width: 13px;
-      height: 58px;
-      border-radius: 7px;
-      background: linear-gradient(180deg, #0d65df, #13b7ba);
-      margin-top: 4px;
-      flex: 0 0 13px;
-    }
-
-    .title {
-      font-size: 39px;
-      line-height: 1.04;
-      font-weight: 900;
-      color: #071f5c;
-      letter-spacing: -0.8px;
-      text-transform: uppercase;
-      max-width: 1080px;
-      white-space: normal;
-    }
-
-    .top-curve {
+    /* CABECERA */
+    .s12-top-curve {
       position: absolute;
       top: 0;
       right: 0;
       width: 360px;
       height: 86px;
-      background: linear-gradient(135deg, #0d65df 0%, #082d91 100%);
-      border-bottom-left-radius: 105px;
       z-index: 1;
+      border-bottom-left-radius: 105px;
+      background: linear-gradient(135deg, #0d65df 0%, #082d91 100%);
     }
 
-    .logo {
-      position: fixed;
-      top: 27px;
+    .s12-logo {
+      position: absolute;
+      top: 26px;
       right: 40px;
       z-index: 5;
       display: flex;
@@ -86,191 +64,342 @@
       text-transform: uppercase;
     }
 
-    .logo-symbol {
+    .s12-logo-symbol {
       width: 50px;
       height: 30px;
+      flex: 0 0 auto;
       border-radius: 50%;
       border: 5px dashed rgba(255,255,255,0.88);
       transform: rotate(-18deg);
-      flex: 0 0 auto;
     }
 
-    .kpi-row {
+    .s12-header {
+      position: relative;
+      z-index: 3;
+      min-height: 86px;
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 8px;
+      padding-right: 390px;
+    }
+
+    .s12-title-wrap {
+      min-width: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    .s12-title-bar {
+      width: 13px;
+      height: 58px;
+      flex: 0 0 13px;
+      margin-top: 4px;
+      border-radius: 7px;
+      background: linear-gradient(180deg, #0d65df, #13b7ba);
+    }
+
+    .s12-title {
+      max-width: 1080px;
+      color: #071f5c;
+      font-size: 39px;
+      line-height: 1.04;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      text-transform: uppercase;
+      white-space: normal;
+    }
+
+    /* KPI: DISEÑO AUTÓNOMO Y UNIFORME */
+    .s12-kpi-row {
       position: relative;
       z-index: 3;
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 14px;
       margin-bottom: 16px;
     }
 
-    .kpi-card {
-      height: 112px;
-      background: #ffffff;
+    .s12-kpi-card {
+      height: 124px;
+      min-width: 0;
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      align-items: center;
+      gap: 13px;
+      padding: 14px;
+      overflow: hidden;
       border: 1px solid #d2dceb;
       border-radius: 18px;
+      background: #ffffff;
       box-shadow: 0 8px 18px rgba(11,45,92,0.16);
-      display: grid;
-      grid-template-columns: 76px 1fr;
-      align-items: center;
-      gap: 11px;
-      padding: 12px 14px;
-      overflow: hidden;
     }
 
-    .kpi-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 18px;
-      color: white;
+    .s12-kpi-icon {
+      width: 72px;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
+      justify-self: center;
+      align-self: center;
+      border-radius: 18px;
+      color: #ffffff;
+      font-size: 35px;
       line-height: 1;
       font-weight: 900;
+      text-align: center;
       box-shadow: 0 9px 16px rgba(0,0,0,0.16);
     }
 
-    .bg-blue { background: linear-gradient(135deg, #1264df, #06339b); }
-    .bg-teal { background: linear-gradient(135deg, #1ac4c6, #087a87); }
-    .bg-orange { background: linear-gradient(135deg, #ffb51d, #ff5f00); }
-    .bg-purple { background: linear-gradient(135deg, #9542e8, #5520aa); }
-
-    .kpi-label {
-      font-size: 12.5px;
-      font-weight: 900;
-      color: #092869;
-      line-height: 1.12;
-      text-transform: uppercase;
-      margin-bottom: 7px;
+    .s12-bg-blue {
+      background: linear-gradient(135deg, #1264df, #06339b);
     }
 
-    .kpi-value { font-size: 30px; font-weight: 900; line-height: 1; color: #0d55d8; }
-    .teal { color: #0a8a96; }
-    .orange { color: #ff6200; }
-    .purple { color: #7a35d7; }
-
-    .kpi-sub {
-      font-size: 10.2px;
-      font-weight: 700;
-      color: #243756;
-      line-height: 1.15;
-      margin-top: 5px;
+    .s12-bg-teal {
+      background: linear-gradient(135deg, #1ac4c6, #087a87);
     }
 
-    .main-grid {
-      position: relative;
-      z-index: 3;
+    .s12-bg-orange {
+      background: linear-gradient(135deg, #ffb51d, #ff5f00);
+    }
+
+    .s12-bg-purple {
+      background: linear-gradient(135deg, #9542e8, #5520aa);
+    }
+
+    .s12-kpi-content {
+      min-width: 0;
+      height: 94px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 18px;
-      height: 455px;
-      margin-bottom: 16px;
+      grid-template-rows: 42px 36px 16px;
+      align-content: center;
     }
 
-    .panel {
-      background: #ffffff;
-      border: 1px solid #cddbef;
-      border-radius: 18px;
-      box-shadow: 0 8px 18px rgba(11,45,92,0.14);
+    .s12-kpi-label {
+      height: 42px;
+      display: flex;
+      align-items: center;
+      color: #092869;
+      font-size: 13px;
+      line-height: 1.08;
+      font-weight: 900;
+      text-transform: uppercase;
       overflow: hidden;
     }
 
-    .panel-title {
-      height: 42px;
-      background: linear-gradient(90deg, #0b3298 0%, #0d5dd4 50%, #11b7bb 100%);
-      color: white;
+    .s12-kpi-value {
+      height: 36px;
       display: flex;
       align-items: center;
-      padding-left: 22px;
-      font-size: 21px;
+      color: #0d55d8;
+      font-size: 36px;
+      line-height: 1;
       font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
+      letter-spacing: -0.6px;
+      white-space: nowrap;
     }
 
-    .panel-body { height: 413px; padding: 24px 30px; }
-    .donut-layout { display: grid; grid-template-columns: 0.58fr 0.42fr; align-items: center; gap: 24px; }
-    .donut-wrap { display: flex; justify-content: center; align-items: center; height: 100%; }
-
-    .donut-center-label {
-      font-size: 28px;
-      font-weight: 900;
-      fill: #092869;
-      text-anchor: middle;
+    .s12-kpi-sub {
+      height: 16px;
+      display: flex;
+      align-items: flex-end;
+      color: #243756;
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
-    .donut-center-sub {
-      font-size: 14px;
-      font-weight: 900;
-      fill: #092869;
-      text-anchor: middle;
-      text-transform: uppercase;
-    }
+    .s12-teal { color: #0a8a96; }
+    .s12-orange { color: #ff6200; }
+    .s12-purple { color: #7a35d7; }
 
-    .legend { display: flex; flex-direction: column; gap: 28px; }
-    .legend-item { display: grid; grid-template-columns: 22px 1fr; gap: 12px; align-items: start; }
-    .dot { width: 18px; height: 18px; border-radius: 50%; margin-top: 5px; }
-    .dot-blue { background: #1250c7; }
-    .dot-orange { background: #ff6200; }
-    .legend-title { font-size: 20px; font-weight: 900; color: #092869; }
-    .legend-sub { font-size: 16px; color: #263a58; margin-top: 5px; }
-
-    table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 35px; }
-    th {
-      background: #0d3298;
-      color: white;
-      padding: 18px 8px;
-      text-transform: uppercase;
-      font-size: 16px;
-      font-weight: 900;
-      border: 1px solid #c7d4e8;
-    }
-    td {
-      padding: 22px 10px;
-      border: 1px solid #c7d4e8;
-      color: #0b2148;
-      text-align: center;
-      font-size: 19px;
-      font-weight: 900;
-    }
-    tbody tr:nth-child(even) td { background: #eaf3ff; }
-
-    .bottom-insight {
+    /* CONTENIDO CENTRAL */
+    .s12-main-grid {
       position: relative;
       z-index: 3;
-      height: 112px;
-      background: #ffffff;
-      border: 2px solid #1b65e3;
-      border-radius: 18px;
-      box-shadow: 0 8px 18px rgba(11,45,92,0.10);
+      height: 455px;
       display: grid;
-      grid-template-columns: 98px 315px 2px 1fr;
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 18px;
-      align-items: center;
-      padding: 18px 22px;
+      margin-bottom: 16px;
     }
 
-    .bottom-icon {
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #1264df, #06339b);
-      color: white;
+    .s12-panel {
+      overflow: hidden;
+      border: 1px solid #cddbef;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 8px 18px rgba(11,45,92,0.14);
+    }
+
+    .s12-panel-title {
+      height: 43px;
+      display: flex;
+      align-items: center;
+      padding: 0 22px;
+      color: #ffffff;
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #0b3298 0%, #0d5dd4 50%, #11b7bb 100%);
+    }
+
+    .s12-panel-body {
+      height: 412px;
+      padding: 24px 30px;
+    }
+
+    .s12-donut-layout {
+      display: grid;
+      grid-template-columns: 0.58fr 0.42fr;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .s12-donut-wrap {
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
+    }
+
+    .s12-donut-center-label {
+      fill: #092869;
+      font-size: 28px;
       font-weight: 900;
+      text-anchor: middle;
+    }
+
+    .s12-donut-center-sub {
+      fill: #092869;
+      font-size: 14px;
+      font-weight: 900;
+      text-anchor: middle;
+      text-transform: uppercase;
+    }
+
+    .s12-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .s12-legend-item {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .s12-dot {
+      width: 18px;
+      height: 18px;
+      margin-top: 5px;
+      border-radius: 50%;
+    }
+
+    .s12-dot-blue { background: #1250c7; }
+    .s12-dot-orange { background: #ff6200; }
+
+    .s12-legend-title {
+      color: #092869;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .s12-legend-sub {
+      margin-top: 5px;
+      color: #263a58;
+      font-size: 16px;
+    }
+
+    .s12-table {
+      width: 100%;
+      margin-top: 35px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .s12-table th {
+      padding: 18px 8px;
+      border: 1px solid #c7d4e8;
+      color: #ffffff;
+      background: #0d3298;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .s12-table td {
+      padding: 22px 10px;
+      border: 1px solid #c7d4e8;
+      color: #0b2148;
+      font-size: 19px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .s12-table tbody tr:nth-child(even) td {
+      background: #eaf3ff;
+    }
+
+    /* PIE DE INSIGHT */
+    .s12-bottom-insight {
+      position: relative;
+      z-index: 3;
+      height: 112px;
+      display: grid;
+      grid-template-columns: 98px 315px 2px 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      border: 2px solid #1b65e3;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 8px 18px rgba(11,45,92,0.10);
+    }
+
+    .s12-bottom-icon {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 36px;
+      line-height: 1;
+      font-weight: 900;
+      background: linear-gradient(135deg, #1264df, #06339b);
       box-shadow: 0 8px 16px rgba(11,45,92,0.18);
     }
-    .bottom-title { font-size: 26px; font-weight: 900; color: #092d91; line-height: 1.1; text-transform: uppercase; }
-    .bottom-divider { width: 2px; height: 62px; background: #b6c7e3; }
-    .bottom-text { font-size: 18px; color: #1d2f4f; line-height: 1.35; }
+
+    .s12-bottom-title {
+      color: #092d91;
+      font-size: 26px;
+      line-height: 1.1;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .s12-bottom-divider {
+      width: 2px;
+      height: 62px;
+      background: #b6c7e3;
+    }
+
+    .s12-bottom-text {
+      color: #1d2f4f;
+      font-size: 18px;
+      line-height: 1.35;
+    }
   </style>
-  <link rel="stylesheet" href="/public/comm-standard.css" />
 </head>
+
 <body>
 <%
   const total = Number(totalAtenciones || 0);
@@ -278,75 +407,217 @@
   const req = Number(requerimientos || 0);
   const incPct = total ? inc / total : 0;
   const reqPct = total ? req / total : 0;
+
   const r = 96;
   const c = 2 * Math.PI * r;
   const incLen = c * incPct;
   const reqLen = c * reqPct;
-  const tituloFinal = String(titulo || '').toUpperCase();
-  const logoFinal = typeof logoText !== 'undefined' ? logoText : 'COMM';
-%>
-<div class="slide">
-  <div class="bottom-band"></div>
-  <div class="top-curve"></div>
-  <div class="logo"><div class="logo-symbol"></div><div><%= logoFinal %></div></div>
 
-  <div class="header">
-    <div class="title-wrap">
-      <div class="title-bar"></div>
-      <div class="title"><%= tituloFinal %></div>
+  const tituloFinal = String(
+    typeof titulo !== 'undefined' && titulo
+      ? titulo
+      : 'Panamerican Huarón - Periodo - Incidentes vs Requerimientos'
+  ).toUpperCase();
+
+  const logoFinal = typeof logoText !== 'undefined' && logoText
+    ? logoText
+    : 'COMM';
+
+  const pctIncFinal = typeof pctIncidentes !== 'undefined'
+    ? pctIncidentes
+    : (incPct * 100).toFixed(2) + '%';
+
+  const pctReqFinal = typeof pctRequerimientos !== 'undefined'
+    ? pctRequerimientos
+    : (reqPct * 100).toFixed(2) + '%';
+
+  const brechaFinal = typeof brecha !== 'undefined'
+    ? brecha
+    : req - inc;
+
+  const tablaFinal = typeof tabla !== 'undefined' && tabla
+    ? tabla
+    : {
+        up: 'TOTAL',
+        incidentes: inc,
+        requerimientos: req,
+        total,
+        pctIncidentes: pctIncFinal,
+        pctRequerimientos: pctReqFinal,
+        pctTotal: '100%'
+      };
+
+  const insightFinal = typeof insight !== 'undefined' && insight
+    ? insight
+    : 'Los requerimientos mantienen mayor participación dentro de las atenciones del periodo.';
+%>
+
+<div class="s12-slide">
+  <div class="s12-bottom-band"></div>
+  <div class="s12-top-curve"></div>
+
+  <div class="s12-logo">
+    <div class="s12-logo-symbol"></div>
+    <div><%= logoFinal %></div>
+  </div>
+
+  <div class="s12-header">
+    <div class="s12-title-wrap">
+      <div class="s12-title-bar"></div>
+      <div class="s12-title"><%= tituloFinal %></div>
     </div>
   </div>
 
-  <div class="kpi-row">
-    <div class="kpi-card"><div class="kpi-icon bg-blue">▣</div><div><div class="kpi-label">Total<br>Atenciones</div><div class="kpi-value"><%= totalAtenciones %></div><div class="kpi-sub">100% del total</div></div></div>
-    <div class="kpi-card"><div class="kpi-icon bg-teal">◇</div><div><div class="kpi-label">Incidentes</div><div class="kpi-value teal"><%= incidentes %></div><div class="kpi-sub"><%= pctIncidentes %> del total</div></div></div>
-    <div class="kpi-card"><div class="kpi-icon bg-orange">▤</div><div><div class="kpi-label">Requerimientos</div><div class="kpi-value orange"><%= requerimientos %></div><div class="kpi-sub"><%= pctRequerimientos %> del total</div></div></div>
-    <div class="kpi-card"><div class="kpi-icon bg-purple">◔</div><div><div class="kpi-label">% Participación de<br>Incidentes</div><div class="kpi-value purple"><%= pctIncidentes %></div><div class="kpi-sub">del total</div></div></div>
-    <div class="kpi-card"><div class="kpi-icon bg-teal">◕</div><div><div class="kpi-label">% Participación de<br>Requerimientos</div><div class="kpi-value teal"><%= pctRequerimientos %></div><div class="kpi-sub">del total</div></div></div>
-    <div class="kpi-card"><div class="kpi-icon bg-blue">⚖</div><div><div class="kpi-label">Brecha</div><div class="kpi-value"><%= brecha %></div><div class="kpi-sub">Req. - Inc.</div></div></div>
+  <div class="s12-kpi-row">
+    <div class="s12-kpi-card">
+      <div class="s12-kpi-icon s12-bg-blue">▣</div>
+      <div class="s12-kpi-content">
+        <div class="s12-kpi-label">Total<br>Atenciones</div>
+        <div class="s12-kpi-value"><%= total %></div>
+        <div class="s12-kpi-sub">100% del total</div>
+      </div>
+    </div>
+
+    <div class="s12-kpi-card">
+      <div class="s12-kpi-icon s12-bg-teal">◇</div>
+      <div class="s12-kpi-content">
+        <div class="s12-kpi-label">Total<br>Incidentes</div>
+        <div class="s12-kpi-value s12-teal"><%= inc %></div>
+        <div class="s12-kpi-sub"><%= pctIncFinal %> del total</div>
+      </div>
+    </div>
+
+    <div class="s12-kpi-card">
+      <div class="s12-kpi-icon s12-bg-orange">▤</div>
+      <div class="s12-kpi-content">
+        <div class="s12-kpi-label">Total<br>Requerimientos</div>
+        <div class="s12-kpi-value s12-orange"><%= req %></div>
+        <div class="s12-kpi-sub"><%= pctReqFinal %> del total</div>
+      </div>
+    </div>
+
+    <div class="s12-kpi-card">
+      <div class="s12-kpi-icon s12-bg-purple">◔</div>
+      <div class="s12-kpi-content">
+        <div class="s12-kpi-label">Participación de<br>Incidentes</div>
+        <div class="s12-kpi-value s12-purple"><%= pctIncFinal %></div>
+        <div class="s12-kpi-sub">del total</div>
+      </div>
+    </div>
+
+    <div class="s12-kpi-card">
+      <div class="s12-kpi-icon s12-bg-teal">◕</div>
+      <div class="s12-kpi-content">
+        <div class="s12-kpi-label">Participación de<br>Requerimientos</div>
+        <div class="s12-kpi-value s12-teal"><%= pctReqFinal %></div>
+        <div class="s12-kpi-sub">del total</div>
+      </div>
+    </div>
+
+    <div class="s12-kpi-card">
+      <div class="s12-kpi-icon s12-bg-blue">⚖</div>
+      <div class="s12-kpi-content">
+        <div class="s12-kpi-label">Brecha<br>Operativa</div>
+        <div class="s12-kpi-value"><%= brechaFinal %></div>
+        <div class="s12-kpi-sub">Req. - Inc.</div>
+      </div>
+    </div>
   </div>
 
-  <div class="main-grid">
-    <div class="panel">
-      <div class="panel-title">Incidente vs Requerimiento Mensual</div>
-      <div class="panel-body donut-layout">
-        <div class="donut-wrap">
+  <div class="s12-main-grid">
+    <div class="s12-panel">
+      <div class="s12-panel-title">Incidente vs Requerimiento Mensual</div>
+
+      <div class="s12-panel-body s12-donut-layout">
+        <div class="s12-donut-wrap">
           <svg width="355" height="330" viewBox="0 0 355 330" aria-label="Donut incidentes vs requerimientos">
             <circle cx="170" cy="164" r="96" fill="none" stroke="#e7eef8" stroke-width="58" />
-            <circle cx="170" cy="164" r="96" fill="none" stroke="#1250c7" stroke-width="58" stroke-dasharray="<%= incLen %> <%= c - incLen %>" stroke-dashoffset="0" transform="rotate(-90 170 164)" />
-            <circle cx="170" cy="164" r="96" fill="none" stroke="#ff6200" stroke-width="58" stroke-dasharray="<%= reqLen %> <%= c - reqLen %>" stroke-dashoffset="<%= -incLen %>" transform="rotate(-90 170 164)" />
+            <circle
+              cx="170"
+              cy="164"
+              r="96"
+              fill="none"
+              stroke="#1250c7"
+              stroke-width="58"
+              stroke-dasharray="<%= incLen %> <%= c - incLen %>"
+              stroke-dashoffset="0"
+              transform="rotate(-90 170 164)"
+            />
+            <circle
+              cx="170"
+              cy="164"
+              r="96"
+              fill="none"
+              stroke="#ff6200"
+              stroke-width="58"
+              stroke-dasharray="<%= reqLen %> <%= c - reqLen %>"
+              stroke-dashoffset="<%= -incLen %>"
+              transform="rotate(-90 170 164)"
+            />
             <circle cx="170" cy="164" r="64" fill="#ffffff" />
-            <text x="170" y="156" class="donut-center-label"><%= totalAtenciones %></text>
-            <text x="170" y="178" class="donut-center-sub">Atenciones</text>
-            <text x="170" y="195" class="donut-center-sub">Totales</text>
+            <text x="170" y="156" class="s12-donut-center-label"><%= total %></text>
+            <text x="170" y="178" class="s12-donut-center-sub">Atenciones</text>
+            <text x="170" y="195" class="s12-donut-center-sub">Totales</text>
           </svg>
         </div>
-        <div class="legend">
-          <div class="legend-item"><span class="dot dot-blue"></span><div><div class="legend-title">Incidentes</div><div class="legend-sub"><%= incidentes %> (<%= pctIncidentes %>)</div></div></div>
-          <div class="legend-item"><span class="dot dot-orange"></span><div><div class="legend-title">Requerimientos</div><div class="legend-sub"><%= requerimientos %> (<%= pctRequerimientos %>)</div></div></div>
+
+        <div class="s12-legend">
+          <div class="s12-legend-item">
+            <span class="s12-dot s12-dot-blue"></span>
+            <div>
+              <div class="s12-legend-title">Incidentes</div>
+              <div class="s12-legend-sub"><%= inc %> (<%= pctIncFinal %>)</div>
+            </div>
+          </div>
+
+          <div class="s12-legend-item">
+            <span class="s12-dot s12-dot-orange"></span>
+            <div>
+              <div class="s12-legend-title">Requerimientos</div>
+              <div class="s12-legend-sub"><%= req %> (<%= pctReqFinal %>)</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="panel">
-      <div class="panel-title">Resumen de Atenciones por Tipo</div>
-      <div class="panel-body">
-        <table>
-          <thead><tr><th>UP</th><th>Incidentes</th><th>Requerimientos</th><th>Total</th></tr></thead>
+    <div class="s12-panel">
+      <div class="s12-panel-title">Resumen de Atenciones por Tipo</div>
+
+      <div class="s12-panel-body">
+        <table class="s12-table">
+          <thead>
+            <tr>
+              <th>UP</th>
+              <th>Incidentes</th>
+              <th>Requerimientos</th>
+              <th>Total</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td><%= tabla.up %></td><td><%= tabla.incidentes %></td><td><%= tabla.requerimientos %></td><td><%= tabla.total %></td></tr>
-            <tr><td>%</td><td><%= tabla.pctIncidentes %></td><td><%= tabla.pctRequerimientos %></td><td><%= tabla.pctTotal %></td></tr>
+            <tr>
+              <td><%= tablaFinal.up %></td>
+              <td><%= tablaFinal.incidentes %></td>
+              <td><%= tablaFinal.requerimientos %></td>
+              <td><%= tablaFinal.total %></td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td><%= tablaFinal.pctIncidentes %></td>
+              <td><%= tablaFinal.pctRequerimientos %></td>
+              <td><%= tablaFinal.pctTotal %></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <div class="bottom-insight">
-    <div class="bottom-icon">↗</div>
-    <div class="bottom-title">Distribución de Atenciones por Tipo</div>
-    <div class="bottom-divider"></div>
-    <div class="bottom-text"><%= insight %></div>
+  <div class="s12-bottom-insight">
+    <div class="s12-bottom-icon">↗</div>
+    <div class="s12-bottom-title">Distribución de Atenciones por Tipo</div>
+    <div class="s12-bottom-divider"></div>
+    <div class="s12-bottom-text"><%= insightFinal %></div>
   </div>
 </div>
 </body>
