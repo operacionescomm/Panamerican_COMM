@@ -47,18 +47,23 @@ app.get('/browser-status', (req, res) => {
 registerSlide(10, getSampleSlide10, normalizeSlide10Data);
 registerSlide(11, getSampleSlide11, normalizeSlide11Data);
 registerSlide(12, getSampleSlide12, normalizeSlide12Data);
-registerSlide(13, getSampleSlide13, normalizeSlide13Data);
-registerSlide(14, getSampleSlide14, normalizeSlide14Data);
-registerSlide(15, getSampleSlide15, normalizeSlide15Data);
-registerSlide(17, getSampleSlide17, normalizeSlide17Data);
-registerSlide(18, getSampleSlide18, normalizeSlide18Data);
-registerSlide(19, getSampleSlide19, normalizeSlide19Data);
 
-function registerSlide(slideNumber, getSampleData, normalizeData) {
+// Nuevo orden del informe:
+// - Slide 13: contenido anterior de la slide 14.
+// - Slide 14: contenido anterior de la slide 15.
+// - Slide 15: contenido anterior de la slide 13.
+registerSlide(13, getSampleSlide14, normalizeSlide14Data, 14);
+registerSlide(14, getSampleSlide15, normalizeSlide15Data, 15);
+registerSlide(15, getSampleSlide13, normalizeSlide13Data, 13);
+
+// La slide 17 es la ultima disponible por ahora.
+registerSlide(17, getSampleSlide17, normalizeSlide17Data);
+
+function registerSlide(slideNumber, getSampleData, normalizeData, templateNumber = slideNumber) {
   app.get(`/test-slide${slideNumber}`, async (req, res) => {
     try {
       const sample = getSampleData();
-      res.render(`slide${slideNumber}`, sample);
+      res.render(`slide${templateNumber}`, sample);
     } catch (error) {
       console.error(`Error en /test-slide${slideNumber}:`, error);
       res.status(500).send(`Error en /test-slide${slideNumber}: ` + error);
@@ -68,7 +73,7 @@ function registerSlide(slideNumber, getSampleData, normalizeData) {
   app.get(`/test-slide${slideNumber}-png`, async (req, res) => {
     try {
       const sample = getSampleData();
-      const html = await renderEjsToString(`slide${slideNumber}`, sample);
+      const html = await renderEjsToString(`slide${templateNumber}`, sample);
       const imageBuffer = await htmlToPng(html);
 
       res.setHeader('Content-Type', 'image/png');
@@ -83,7 +88,7 @@ function registerSlide(slideNumber, getSampleData, normalizeData) {
   app.post(`/render/slide${slideNumber}`, async (req, res) => {
     try {
       const data = normalizeData(req.body || {});
-      const html = await renderEjsToString(`slide${slideNumber}`, data);
+      const html = await renderEjsToString(`slide${templateNumber}`, data);
       const imageBuffer = await htmlToPng(html);
 
       res.setHeader('Content-Type', 'image/png');

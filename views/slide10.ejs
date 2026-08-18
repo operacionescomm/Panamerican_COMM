@@ -72,7 +72,7 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
       margin-bottom: 18px;
     }
@@ -372,18 +372,6 @@
         : data.length
   );
 
-  const promedioAt = typeof promedioAtencionesDia !== 'undefined'
-    ? promedioAtencionesDia
-    : diasActivos ? (totalAt / diasActivos).toFixed(1) : '0.0';
-
-  const promedioHr = typeof promedioHorasDia !== 'undefined'
-    ? promedioHorasDia
-    : diasActivos ? (totalHr / diasActivos).toFixed(1) : '0.0';
-
-  const horasAt = typeof horasPorAtencion !== 'undefined'
-    ? horasPorAtencion
-    : totalAt ? (totalHr / totalAt).toFixed(2) : '0.00';
-
   const safePeriodo = typeof periodo !== 'undefined'
     ? periodo
     : 'Mayo 2026';
@@ -448,29 +436,6 @@
       </div>
     </div>
 
-    <div class="s10-kpi-card">
-      <div class="s10-kpi-icon s10-bg-orange">▥</div>
-      <div>
-        <div class="s10-kpi-label">Promedio de<br>Atenciones por Día</div>
-        <div class="s10-kpi-value s10-orange"><%= promedioAt %></div>
-      </div>
-    </div>
-
-    <div class="s10-kpi-card">
-      <div class="s10-kpi-icon s10-bg-purple">◷</div>
-      <div>
-        <div class="s10-kpi-label">Promedio de<br>Horas por Día</div>
-        <div class="s10-kpi-value s10-purple"><%= promedioHr %></div>
-      </div>
-    </div>
-
-    <div class="s10-kpi-card">
-      <div class="s10-kpi-icon s10-bg-teal">▦</div>
-      <div>
-        <div class="s10-kpi-label">Horas por<br>Atención</div>
-        <div class="s10-kpi-value s10-teal"><%= horasAt %></div>
-      </div>
-    </div>
   </div>
 
   <div class="s10-chart-panel">

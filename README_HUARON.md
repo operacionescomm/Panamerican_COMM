@@ -11,20 +11,20 @@ Paquete adaptado al formato visual usado para el reporte de Huarón.
 - Incidentes: 23
 
 ## Rutas de prueba
-- `/test-slide10` a `/test-slide19`
-- `/test-slide10-png` a `/test-slide19-png`
+- `/test-slide10`, `/test-slide11`, `/test-slide12`, `/test-slide13`, `/test-slide14`, `/test-slide15` y `/test-slide17`
+- Las mismas rutas con sufijo `-png` para obtener la imagen renderizada
 - Render API: `POST /render/slide{n}`
 
 ## Diapositivas incluidas
-- Slide 10: Atenciones y horas por día
+- Slide 10: Días, atenciones y horas por día
 - Slide 11: IM/SUP y evolución mensual
 - Slide 12: Incidentes vs requerimientos
-- Slide 13: Histórico de requerimientos e incidentes
-- Slide 14: Top 10 requerimientos
-- Slide 15: Top 10 incidentes
+- Slide 13: Top 10 requerimientos
+- Slide 14: Top 10 incidentes
+- Slide 15: Histórico de requerimientos e incidentes
 - Slide 17: Suministros general
-- Slide 18: Suministros en requerimientos
-- Slide 19: Suministros en incidentes
+
+Por ahora, la generación termina en la slide 17. Las slides 18 y 19 no están publicadas.
 
 > Nota: Se mantuvo el diseño, la estructura de rutas y las plantillas originales. Solo se adaptaron títulos, textos y datos de muestra a Panamerican Huarón.
 
