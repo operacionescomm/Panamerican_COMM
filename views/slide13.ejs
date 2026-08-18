@@ -260,7 +260,7 @@
       position: relative;
       z-index: 2;
       height: 105px;
-      transform: translateY(-24px);
+      transform: translateY(-44px);
       border: 2px solid #1b65e3;
       border-radius: 16px;
       background: #ffffff;
@@ -308,8 +308,13 @@
     }
 
     .bottom-graphic {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      font-size: 82px;
+      font-size: 72px;
+      line-height: 1;
       color: #0ba88e;
       opacity: 0.95;
     }
@@ -477,7 +482,7 @@
   const incAngle = 360 - reqAngle;
 
   const donutCx = 285;
-  const donutCy = 155;
+  const donutCy = 130;
   const donutR = 88;
   const donutStroke = 54;
   const donutC = 2 * Math.PI * donutR;
@@ -600,19 +605,19 @@
             TOTALES
           </text>
 
-          <text x="40" y="145" class="donut-side-orange"><%= totalReq.toLocaleString('en-US') %></text>
-          <text x="40" y="175" class="donut-side-orange"><%= pctReq %></text>
-          <line x1="108" y1="158" x2="172" y2="158" stroke="#ff6a00" stroke-width="2"></line>
+          <text x="40" y="120" class="donut-side-orange"><%= totalReq.toLocaleString('en-US') %></text>
+          <text x="40" y="150" class="donut-side-orange"><%= pctReq %></text>
+          <line x1="108" y1="133" x2="172" y2="133" stroke="#ff6a00" stroke-width="2"></line>
 
-          <text x="442" y="145" class="donut-side-blue"><%= totalInc.toLocaleString('en-US') %></text>
-          <text x="442" y="175" class="donut-side-blue"><%= pctInc %></text>
-          <line x1="390" y1="150" x2="430" y2="130" stroke="#0b43bf" stroke-width="2"></line>
+          <text x="442" y="120" class="donut-side-blue"><%= totalInc.toLocaleString('en-US') %></text>
+          <text x="442" y="150" class="donut-side-blue"><%= pctInc %></text>
+          <line x1="390" y1="125" x2="430" y2="105" stroke="#0b43bf" stroke-width="2"></line>
 
-          <rect x="150" y="270" width="13" height="13" fill="#ff6a00"></rect>
-          <text x="173" y="282" class="legend-text">Requerimiento</text>
+          <rect x="150" y="245" width="13" height="13" fill="#ff6a00"></rect>
+          <text x="173" y="257" class="legend-text">Requerimiento</text>
 
-          <rect x="356" y="270" width="13" height="13" fill="#0b43bf"></rect>
-          <text x="379" y="282" class="legend-text">Incidente</text>
+          <rect x="356" y="245" width="13" height="13" fill="#0b43bf"></rect>
+          <text x="379" y="257" class="legend-text">Incidente</text>
         </svg>
       </div>
     </div>
