@@ -1144,16 +1144,14 @@ function normalizeSlide13Data(body) {
     ];
   }
 
+  // Los KPI deben sumar exactamente los mismos meses visibles en la serie.
   const totalRequerimientos =
-    toNumber(body.totalRequerimientos ?? body.requerimientos ?? 0) ||
     meses.reduce((acc, item) => acc + item.requerimientos, 0);
 
   const totalIncidentes =
-    toNumber(body.totalIncidentes ?? body.incidentes ?? 0) ||
     meses.reduce((acc, item) => acc + item.incidentes, 0);
 
   const totalAtenciones =
-    toNumber(body.totalAtenciones ?? body.total ?? 0) ||
     totalRequerimientos + totalIncidentes;
 
   // Las participaciones siempre se derivan de las cantidades finales.
@@ -1165,8 +1163,7 @@ function normalizeSlide13Data(body) {
     calcPctNoDecimal(totalIncidentes, totalAtenciones);
 
   const promedioMensualTotal =
-    body.promedioMensualTotal ||
-    (meses.length ? (totalAtenciones / meses.length).toFixed(1) : '0.0');
+    meses.length ? (totalAtenciones / meses.length).toFixed(1) : '0.0';
 
   return {
     titulo:
