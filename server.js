@@ -1156,12 +1156,12 @@ function normalizeSlide13Data(body) {
     toNumber(body.totalAtenciones ?? body.total ?? 0) ||
     totalRequerimientos + totalIncidentes;
 
+  // Las participaciones siempre se derivan de las cantidades finales.
+  // Así se evita conservar un "0%" enviado por un payload desactualizado.
   const participacionRequerimientos =
-    body.participacionRequerimientos ||
     calcPctNoDecimal(totalRequerimientos, totalAtenciones);
 
   const participacionIncidentes =
-    body.participacionIncidentes ||
     calcPctNoDecimal(totalIncidentes, totalAtenciones);
 
   const promedioMensualTotal =
