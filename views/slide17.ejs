@@ -405,9 +405,9 @@
   const maxCant = Math.ceil(maxCantRaw / 10) * 10;
 
   const chartLeft = 88;
-  const chartTop = 62;
+  const chartTop = 72;
   const chartW = 670;
-  const chartH = 229;
+  const chartH = 219;
   const baseY = chartTop + chartH;
   const gap = processedItems.length ? chartW / processedItems.length : chartW;
   const barW = Math.min(42, gap * 0.42);
@@ -423,7 +423,6 @@
 
 <div class="slide">
   <div class="bottom-band"></div>
-  <div class="top-curve"></div>
 
   <div class="header">
     <div class="title-wrap">
@@ -542,7 +541,13 @@
               const pctY = baseY - (item.pctAcumulado / 100) * chartH;
             %>
               <circle cx="<%= xCenter %>" cy="<%= pctY %>" r="6" fill="#ff6200"></circle>
-              <text x="<%= xCenter + (i === processedItems.length - 1 ? -9 : 9) %>" y="<%= Math.max(chartTop + 13, pctY + (i % 2 ? 18 : -10)) %>" text-anchor="<%= i === processedItems.length - 1 ? 'end' : 'start' %>" class="line-label">
+              <% const etiquetaFinal = i === processedItems.length - 1; %>
+              <text
+                x="<%= xCenter + (etiquetaFinal || i % 2 === 0 ? -10 : 10) %>"
+                y="<%= Math.max(chartTop + 13, pctY + (etiquetaFinal ? 25 : (i % 2 ? 21 : -12))) %>"
+                text-anchor="<%= etiquetaFinal || i % 2 === 0 ? 'end' : 'start' %>"
+                class="line-label"
+              >
                 <%= item.pctAcumulado.toFixed(2) %>%
               </text>
             <% }) %>
