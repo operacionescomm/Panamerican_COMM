@@ -313,7 +313,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-size: 72px;
+      font-size: 54px;
+      font-family: Arial, sans-serif;
+      font-weight: 900;
       line-height: 1;
       color: #0ba88e;
       opacity: 0.95;
@@ -482,7 +484,7 @@
   const incAngle = 360 - reqAngle;
 
   const donutCx = 285;
-  const donutCy = 130;
+  const donutCy = 112;
   const donutR = 88;
   const donutStroke = 54;
   const donutC = 2 * Math.PI * donutR;
@@ -499,10 +501,6 @@
       <div class="title"><%= tituloFinal %></div>
     </div>
 
-    <div class="logo">
-      <div class="logo-symbol"></div>
-      <div><%= safeLogo %></div>
-    </div>
   </div>
 
   <div class="kpi-row">
@@ -605,12 +603,12 @@
             TOTALES
           </text>
 
-          <text x="40" y="120" class="donut-side-orange"><%= totalReq.toLocaleString('en-US') %></text>
-          <text x="40" y="150" class="donut-side-orange"><%= pctReq %></text>
+          <text x="40" y="102" class="donut-side-orange"><%= totalReq.toLocaleString('en-US') %></text>
+          <text x="40" y="132" class="donut-side-orange"><%= pctReq %></text>
           <line x1="108" y1="133" x2="172" y2="133" stroke="#ff6a00" stroke-width="2"></line>
 
-          <text x="442" y="120" class="donut-side-blue"><%= totalInc.toLocaleString('en-US') %></text>
-          <text x="442" y="150" class="donut-side-blue"><%= pctInc %></text>
+          <text x="442" y="102" class="donut-side-blue"><%= totalInc.toLocaleString('en-US') %></text>
+          <text x="442" y="132" class="donut-side-blue"><%= pctInc %></text>
           <line x1="390" y1="125" x2="430" y2="105" stroke="#0b43bf" stroke-width="2"></line>
 
           <rect x="150" y="245" width="13" height="13" fill="#ff6a00"></rect>
@@ -653,8 +651,9 @@
           <circle cx="<%= x %>" cy="<%= yInc %>" r="6" fill="#0b43bf"></circle>
           <circle cx="<%= x %>" cy="<%= yReq %>" r="6" fill="#ff5f00"></circle>
 
-          <text x="<%= x %>" y="<%= yInc - 15 %>" text-anchor="middle" class="line-label-blue"><%= item.incidentes %></text>
-          <text x="<%= x %>" y="<%= yReq - 15 %>" text-anchor="middle" class="line-label-orange"><%= item.requerimientos %></text>
+          <% const labelsCercanos = Math.abs(yInc - yReq) < 24; %>
+          <text x="<%= x + (labelsCercanos ? -9 : 0) %>" y="<%= yInc - 15 %>" text-anchor="<%= labelsCercanos ? 'end' : 'middle' %>" class="line-label-blue"><%= item.incidentes %></text>
+          <text x="<%= x + (labelsCercanos ? 9 : 0) %>" y="<%= yReq - 15 %>" text-anchor="<%= labelsCercanos ? 'start' : 'middle' %>" class="line-label-orange"><%= item.requerimientos %></text>
 
           <text x="<%= x %>" y="425" text-anchor="middle" class="month-label"><%= item.mes %></text>
         <% }) %>
@@ -669,8 +668,9 @@
     <div class="bottom-title">Resultado Operativo</div>
     <div class="bottom-divider"></div>
     <div class="bottom-text"><%= insightFinal %></div>
-    <div class="bottom-graphic">✅</div>
+    <div class="bottom-graphic">✓</div>
   </div>
 </div>
 </body>
 </html>
+
