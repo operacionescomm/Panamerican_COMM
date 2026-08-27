@@ -313,7 +313,7 @@
     .axis-label { fill: #08245c; font-size: 13px; font-weight: 900; }
     .axis-title { fill: #08245c; font-size: 15px; font-weight: 900; }
     .bar-label { fill: #08245c; font-size: 13px; font-weight: 900; }
-    .line-label { fill: #08245c; font-size: 12px; font-weight: 900; }
+    .line-label { fill: #ff6200; font-size: 11px; font-weight: 900; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
     .x-label { fill: #08245c; font-size: 8.6px; font-weight: 800; }
     .legend-text { fill: #08245c; font-size: 14px; font-weight: 900; }
   </style>
@@ -405,9 +405,9 @@
   const maxCant = Math.ceil(maxCantRaw / 10) * 10;
 
   const chartLeft = 88;
-  const chartTop = 46;
+  const chartTop = 62;
   const chartW = 670;
-  const chartH = 245;
+  const chartH = 229;
   const baseY = chartTop + chartH;
   const gap = processedItems.length ? chartW / processedItems.length : chartW;
   const barW = Math.min(42, gap * 0.42);
@@ -424,7 +424,6 @@
 <div class="slide">
   <div class="bottom-band"></div>
   <div class="top-curve"></div>
-  <div class="logo"><div class="logo-symbol"></div><div>COMM</div></div>
 
   <div class="header">
     <div class="title-wrap">
@@ -543,7 +542,7 @@
               const pctY = baseY - (item.pctAcumulado / 100) * chartH;
             %>
               <circle cx="<%= xCenter %>" cy="<%= pctY %>" r="6" fill="#ff6200"></circle>
-              <text x="<%= xCenter %>" y="<%= pctY - 12 %>" text-anchor="middle" class="line-label">
+              <text x="<%= xCenter + (i === processedItems.length - 1 ? -9 : 9) %>" y="<%= Math.max(chartTop + 13, pctY + (i % 2 ? 18 : -10)) %>" text-anchor="<%= i === processedItems.length - 1 ? 'end' : 'start' %>" class="line-label">
                 <%= item.pctAcumulado.toFixed(2) %>%
               </text>
             <% }) %>
@@ -616,3 +615,4 @@
 </div>
 </body>
 </html>
+
